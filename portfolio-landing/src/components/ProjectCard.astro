@@ -1,0 +1,44 @@
+---
+import { categoryLabel } from "../lib/categories";
+
+interface Props {
+  title: string;
+  category: string;
+  role: string;
+  cover: string;
+  link?: string;
+  wide?: boolean;
+}
+const { title, category, role, cover, link, wide = false } = Astro.props;
+
+const Tag = link ? "a" : "div";
+---
+
+<Tag
+  href={link}
+  target={link ? "_blank" : undefined}
+  rel={link ? "noopener noreferrer" : undefined}
+  class:list={[
+    "project-card group relative overflow-hidden rounded-xl2 glass block",
+    wide ? "md:col-span-2" : "",
+  ]}
+  data-category={category}
+>
+  <div class="aspect-[4/3] w-full overflow-hidden">
+    <img
+      src={cover}
+      alt={title}
+      loading="lazy"
+      class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+    />
+  </div>
+  <div class="p-5 flex items-center justify-between gap-4">
+    <div>
+      <h3 class="font-display text-lg normal-case tracking-normal">{title}</h3>
+      <p class="text-muted text-sm">{role}</p>
+    </div>
+    <span class="text-xs text-primary border border-primary/30 rounded-full px-3 py-1 whitespace-nowrap">
+      {categoryLabel(category)}
+    </span>
+  </div>
+</Tag>

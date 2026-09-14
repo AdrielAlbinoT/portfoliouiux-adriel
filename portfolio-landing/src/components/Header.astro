@@ -1,0 +1,35 @@
+---
+const links = [
+  { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="fixed top-4 inset-x-0 z-50 px-4">
+  <nav
+    class="glass-strong max-w-content mx-auto rounded-full px-5 py-3 flex items-center justify-between"
+  >
+    <a href="#top" class="font-display text-lg tracking-widest text-ink">
+      TU<span class="text-primary">.</span>NOMBRE
+      <!-- TODO: reemplaza por tu nombre o logo -->
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm text-muted">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="hover:text-primary transition">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a href="#contacto" class="btn-primary !py-2.5 !px-5 text-sm">
+      Hablemos
+    </a>
+  </nav>
+</header>

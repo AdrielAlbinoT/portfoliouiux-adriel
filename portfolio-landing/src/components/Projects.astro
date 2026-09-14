@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+import { CATEGORIES } from "../lib/categories";
+
+const allProjects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="proyectos" class="section">
+  <p class="eyebrow">Trabajo seleccionado</p>
+  <h2 class="text-4xl md:text-5xl mb-10">Proyectos destacados</h2>
+
+  <div class="flex flex-wrap gap-3 mb-10" id="filter-tabs">
+    <button
+      type="button"
+      class="filter-btn is-active"
+      data-filter="all"
+    >
+      Todos
+    </button>
+    {
+      CATEGORIES.map((cat) => (
+        <button type="button" class="filter-btn" data-filter={cat.slug}>
+          {cat.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+    {
+      allProjects.map((project, i) => (
+        <ProjectCard
+          title={project.data.title}
+          category={project.data.category}
+          role={project.data.role}
+          cover={project.data.cover}
+          link={project.data.link}
+          wide={i === 0}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .filter-btn {
+    @apply text-sm text-muted border border-line rounded-full px-4 py-2 transition;
+  }
+  .filter-btn.is-active,
+  .filter-btn:hover {
+    @apply text-primary border-primary/50;
+  }
+</style>
+
+<script>
+  // Filtro de proyectos por categoría — sin frameworks, solo DOM
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const cards = document.querySelectorAll<HTMLElement>(".project-card");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const filter = tab.dataset.filter;
+
+      tabs.forEach((t) => t.classList.remove("is-active"));
+      tab.classList.add("is-active");
+
+      cards.forEach((card) => {
+        const match = filter === "all" || card.dataset.category === filter;
+        card.style.display = match ? "" : "none";
+      });
+    });
+  });
+</script>

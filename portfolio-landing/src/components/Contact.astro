@@ -1,0 +1,76 @@
+---
+// TODO: reemplaza YOUR_FORM_ID por tu endpoint real de https://formspree.io
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+---
+
+<section id="contacto" class="section">
+  <div class="glass rounded-xl2 p-8 md:p-14 grid md:grid-cols-2 gap-12">
+    <div>
+      <p class="eyebrow">Contacto</p>
+      <h2 class="text-4xl md:text-5xl mb-6 leading-[0.95]">
+        Trabajemos<br />juntos
+      </h2>
+      <p class="text-muted leading-relaxed mb-8">
+        <!-- TODO: ajusta el copy -->
+        ¿Tienes un proyecto en mente? Cuéntame de qué se trata y te
+        respondo a la brevedad.
+      </p>
+      <ul class="space-y-2 text-sm text-muted">
+        <li>
+          <a href="mailto:tu@correo.com" class="hover:text-primary transition">
+            tu@correo.com
+          </a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/TU_USUARIO" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition">
+            Behance
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/TU_USUARIO" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <form action={FORMSPREE_ENDPOINT} method="POST" class="space-y-4">
+      <div>
+        <label for="name" class="block text-sm text-muted mb-2">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          class="w-full bg-white/[0.03] border border-line rounded-lg px-4 py-3 text-ink placeholder:text-muted/60 focus:border-primary outline-none transition"
+          placeholder="Tu nombre"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm text-muted mb-2">Correo</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          class="w-full bg-white/[0.03] border border-line rounded-lg px-4 py-3 text-ink placeholder:text-muted/60 focus:border-primary outline-none transition"
+          placeholder="tu@correo.com"
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm text-muted mb-2">Mensaje</label>
+        <textarea
+          name="message"
+          id="message"
+          rows="4"
+          required
+          class="w-full bg-white/[0.03] border border-line rounded-lg px-4 py-3 text-ink placeholder:text-muted/60 focus:border-primary outline-none transition resize-none"
+          placeholder="Cuéntame sobre tu proyecto"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn-primary w-full justify-center">
+        Enviar mensaje
+      </button>
+    </form>
+  </div>
+</section>

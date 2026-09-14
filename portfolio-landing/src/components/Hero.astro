@@ -1,0 +1,52 @@
+---
+const stats = [
+  { value: "5+", label: "Años de experiencia" }, // TODO: ajusta tus números reales
+  { value: "20+", label: "Clientes" },
+  { value: "30+", label: "Proyectos completados" },
+  { value: "10+", label: "Reconocimientos" },
+];
+---
+
+<section id="top" class="relative pt-8 pb-20 overflow-hidden">
+  <!-- Glow decorativo sutil detrás del hero -->
+  <div
+    class="pointer-events-none absolute -top-12 right-0 w-[36rem] h-[36rem] rounded-full bg-primary/10 blur-[120px]"
+  >
+  </div>
+
+  <div class="section grid md:grid-cols-2 gap-12 items-center relative">
+    <div>
+      <p class="eyebrow">Hola, soy Adriel</p>
+      <h1 class="text-5xl md:text-8xl leading-[0.95] mb-6">
+        Diseñador<br />UI/UX
+      </h1>
+      <p class="text-muted max-w-md mb-8 md:text-lg leading-relaxed">
+        <!-- TODO: reemplaza con tu frase de valor real -->
+        Diseño experiencias digitales claras y funcionales, desde la
+        investigación hasta la interfaz final — para producto, marca y
+        comunicación digital.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+        <a href="#sobre-mi" class="btn-ghost">Sobre mí</a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <img src="/images/adriel-hero.webp" alt="adriel" class="w-full h-full object-cover rounded-xl2" />
+    </div>
+  </div>
+
+  <div class="section !py-0 mt-4">
+    <div class="glass rounded-xl2 grid grid-cols-2 md:grid-cols-4 divide-x divide-line">
+      {
+        stats.map((stat) => (
+          <div class="p-6 text-center md:text-left">
+            <p class="font-display text-3xl md:text-4xl text-primary">{stat.value}</p>
+            <p class="text-muted text-sm mt-1">{stat.label}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
