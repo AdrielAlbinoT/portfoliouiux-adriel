@@ -1,23 +1,28 @@
 ---
-// TODO: reemplaza con tu experiencia real
 const experience = [
   {
-    period: "2024 — Presente",
-    role: "Diseñadora UI/UX",
-    company: "Nombre de la empresa",
-    description: "Diseño de producto digital de punta a punta: research, wireframes, UI y testing con usuarios.",
+    period: "2024 — Actualidad",
+    role: "Sys Sistemas y Soluciones",
+    location: "Lima - Perú",
+    description: "Rediseño completo de UI/UX para los principales productos digitales en los sectores hotelero y de recursos humanos. Diseño de merchandise y material gráfico para eventos corporativos. Diseño gráfico de gran formato para eventos y comunicación corporativa. Landing pages y desarrollo de concepto visual.",
   },
   {
-    period: "2022 — 2024",
-    role: "Diseñadora Gráfica / Digital",
-    company: "Nombre de la empresa",
-    description: "Piezas digitales, identidad de marca y diseño editorial para distintos clientes.",
+    period: "2022 — Actualidad",
+    role: "FractalUp - All-in-One",
+    location: "España",
+    description: "Diseño UI/UX de la plataforma. Creación de Design System y componentes UI escalables. Animaciones creadas con Rive. Diseño de landing pages. Diseño gráfico para redes sociales. Desarrollo de identidad corporativa.",
   },
   {
-    period: "2021 — 2022",
-    role: "Diseñadora Junior",
-    company: "Nombre de la empresa",
-    description: "Apoyo en proyectos de branding y diseño para redes sociales.",
+    period: "2025",
+    role: "Disisoft (Freelance)",
+    location: "Perú",
+    description: "Rediseño completo de UI/UX de la aplicación AnalitixGo. Asesoría en diseño UI/UX para mejorar el impacto del producto y la experiencia de usuario. Creación de componentes UI reutilizables. Desarrollo de un Design System base.",
+  },
+  {
+    period: "2023 — 2024",
+    role: "Festiva App (Freelance)",
+    location: "Noruega",
+    description: "Diseño de interfaces móviles (UI/UX). Diseño de recursos visuales y gráficos. Desarrollo de un Design System base.",
   },
 ];
 ---
@@ -26,19 +31,45 @@ const experience = [
   <div class="grid md:grid-cols-2 gap-16">
     <div>
       <p class="eyebrow">Sobre mí</p>
-      <h2 class="text-4xl md:text-5xl mb-6 leading-[0.95]">
-        Diseño con<br />intención
+      <h2 class="text-4xl md:text-5xl mb-2 leading-[0.95] uppercase">
+        Adriel Albino T
       </h2>
-      <p class="text-muted leading-relaxed mb-6">
-        <!-- TODO: reemplaza con tu historia real -->
-        Soy diseñadora UI/UX enfocada en crear productos digitales claros y
-        usables. Me interesa el proceso tanto como el resultado: entender el
-        problema real antes de proponer una solución visual.
+      <p class="text-primary mb-6 text-sm md:text-base font-medium">
+        Diseñador UI/UX | Gráfico Digital
       </p>
-      <p class="text-muted leading-relaxed">
-        Trabajo con equipos de producto, marcas y negocios que necesitan
-        traducir una idea en una experiencia digital sólida.
+      <p class="text-ink leading-relaxed mb-6">
+        ¡Hola! Soy Adriel, un diseñador UI/UX apasionado por crear experiencias digitales memorables, combinando usabilidad, estética y creatividad, logrando así productos funcionales y atractivos que conectan con los usuarios.
       </p>
+      <p class="text-ink leading-relaxed mb-8">
+        Disfruto colaborar en proyectos innovadores, aportando soluciones únicas y de alto impacto gracias a mi experiencia con metodologías ágiles y trabajo en equipo.
+      </p>
+      <p class="text-ink leading-relaxed mb-8">
+        Cada proyecto es una oportunidad para aprender, crecer y transformar ideas en experiencias increíbles. ¿Listos para lograrlo juntos?
+      </p>
+
+      <div class="space-y-6">
+        <div>
+          <div class="inline-block bg-primary text-white px-4 py-2 text-lg font-display font-bold mb-3 uppercase tracking-wider">
+            Idiomas
+          </div>
+          <ul class="text-sm text-ink space-y-2 ml-2">
+            <li>Español <span class="text-primary font-medium">(Nativo)</span></li>
+            <li>Inglés <span class="text-primary font-medium">(Intermedio - Avanzado)</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="inline-block bg-primary text-white px-4 py-2 text-lg font-display font-bold mb-3 uppercase tracking-wider">
+            Fortalezas
+          </div>
+          <ul class="text-sm text-ink space-y-2 ml-2">
+            <li>Empatía</li>
+            <li>Compromiso</li>
+            <li>Responsabilidad</li>
+            <li>Autoaprendizaje</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="relative pl-8 border-l border-line space-y-10">
@@ -47,11 +78,11 @@ const experience = [
           <div class="relative">
             <span class="absolute -left-[2.35rem] top-1 w-3 h-3 rounded-full bg-primary" />
             <p class="text-primary text-sm font-medium mb-1">{item.period}</p>
-            <h3 class="font-display text-xl normal-case tracking-normal mb-1">
+            <h3 class="font-display text-lg normal-case tracking-normal mb-1">
               {item.role}
             </h3>
-            <p class="text-muted text-sm mb-2">{item.company}</p>
-            <p class="text-muted text-sm leading-relaxed">{item.description}</p>
+            <p class="text-primary text-xs mb-2">{item.location}</p>
+            <p class="text-ink text-sm leading-relaxed">{item.description}</p>
           </div>
         ))
       }
