@@ -104,7 +104,7 @@ const services = [
   const scrollNext = document.getElementById("scrollNext");
 
   const scrollAmount = 400;
-  let autoplayInterval: NodeJS.Timeout | null = null;
+  let autoplayInterval: ReturnType<typeof setInterval> | null = null;
   let isUserInteracting = false;
 
   function startAutoplay() {
